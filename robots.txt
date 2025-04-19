@@ -1,42 +1,100 @@
-# Indique aux robots que toutes les pages peuvent être explorées, sauf restrictions spécifiées
+Une note sur 10 # Robots.txt מותאם לשנת 2025 - מצטיין מעל כולם
+# מיועד לשוק הישראלי, בינה מלאכותית, Google AI, עוזרים קוליים וקידום אתרים מתקדם
+# אתר: https://clairvoyancemedium.github.io/Hasarat-kishufim-mele-a-im-haganah-mipnei-lehashim-ra-im.github.io/
+# עדכון אחרון: 19/04/2025 14:00 GMT
+# הערה: יש לבדוק עם Google Search Console ו-robotstxt.org לאימות
+
+##########################
+# הרשאה כללית          #
+##########################
 User-agent: *
-Disallow: /admin/
-Disallow: /tmp/
+Disallow: /private/          # תיקיות פרטיות (כגון ניהול, סקריפטים)
+Disallow: /temp/             # תיקיות זמניות
+Disallow: /*?*               # מונע תוכן כפול (פרמטרים בכתובות URL)
+Allow: /*.css$               # CSS לטעינה מיטבית (מיושם לכולם)
+Allow: /*.js$                # JS חיוני (מיושם לכולם)
+Allow: /*.pdf$               # מאפשר קבצי PDF אסטרטגיים (כגון מדריכים)
+Allow: /                     # הרשאה כברירת מחדל
+
+########################################
+# Googlebot (כולל Google AI 2025)     #
+########################################
+User-agent: Googlebot
+Disallow: /private/
+Disallow: /temp/
+Allow: /טקסים/
+Allow: /הגנה/
+Allow: /הסרת-כישופים/
+
+###########################################
+# עוזרים קוליים                        #
+###########################################
+User-agent: Googlebot-Voice
+Disallow: /private/
+Disallow: /temp/
+Allow: /שאלות-נפוצות/
+Allow: /טקסים-פשוטים/
+Allow: /עצות/
+User-agent: Amazonbot        # היפותטי עבור Alexa
+Disallow: /private/
+Disallow: /temp/
+Allow: /שאלות-נפוצות/
+Allow: /עצות/
+User-agent: Applebot         # היפותטי עבור Siri
+Disallow: /private/
+Disallow: /temp/
+Allow: /שאלות-נפוצות/
+Allow: /עצות/
+
+###########################################
+# Bing (שוק דוברי עברית מחוץ ל-Google)  #
+###########################################
+User-agent: Bingbot
+Disallow: /private/
+Disallow: /temp/
+
+#################################
+# חסימת רובוטים לא רצויים     #
+#################################
+User-agent: AhrefsBot
+Disallow: /
+User-agent: SemrushBot
+Disallow: /
+User-agent: MJ12bot
+Disallow: /
+
+##################################################
+# שותפים ומנתחי Google                         #
+##################################################
+User-agent: Mediapartners-Google
+Disallow: /private/
+User-agent: AdsBot-Google
 Disallow: /private/
 
-# Bloquer des URL avec paramètres inutiles pour l'indexation
-Disallow: /*?debug=true
-Disallow: /*?preview=true
+##################################################
+# סורקי AI מתפתחים (צפי לשנת 2025)            #
+##################################################
+User-agent: xAI-Crawler
+Disallow: /private/
+User-agent: OpenAI-Crawler
+Disallow: /private/
+User-agent: AnthropicBot
+Disallow: /private/
+User-agent: Qwantify         # שוק דוברי עברית
+Disallow: /private/
 
-# Permettre les fichiers nécessaires au bon affichage et fonctionnement
-Allow: /css/
-Allow: /js/
-Allow: /images/
+##################################################
+# אופטימיזציה מתקדמת (מותאם למובייל)         #
+##################################################
+User-agent: Googlebot-Mobile
+Disallow: /private/
+Disallow: /temp/
+Allow: /טקסים/
+Allow: /הגנה/
+Allow: /הסרת-כישופים/
 
-# Référencement des ressources multimédias
-Allow: *.png
-Allow: *.jpg
-Allow: *.webp
-Allow: *.css
-Allow: *.js
-
-# Fournir le chemin du fichier sitemap pour une meilleure indexation
-Sitemap: https://www.clairvoyancemedium.com/sitemap.xml
-
-# Autorisation pour les robots Google et Bing pour maximiser les campagnes publicitaires
-User-agent: Googlebot
-Allow: /
-User-agent: AdsBot-Google
-Allow: /
-User-agent: Bingbot
-Allow: /
-
-# Bloquer les robots nuisibles ou non désirés
-User-agent: BadBot
-Disallow: /
-User-agent: EvilScraper
-Disallow: /
-
-# Empêcher l'exploration des fichiers sensibles
-Disallow: /config/
-Disallow: /backup/
+##################
+# מפת אתר וסריקה #
+##################
+Sitemap: https://clairvoyancemedium.github.io/Hasarat-kishufim-mele-a-im-haganah-mipnei-lehashim-ra-im.github.io/sitemap.xml
+Crawl-delay: 0.5
